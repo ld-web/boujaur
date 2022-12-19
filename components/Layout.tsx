@@ -9,9 +9,7 @@ const Layout = ({ children }: { children?: React.ReactNode }) => (
       <link rel="icon" href="/taiwan_flag.png" />
     </Head>
 
-    <main className="grid place-content-center mx-2.5 sm:mx-0 text-justify">
-      {children}
-    </main>
+    <main className="grid place-content-center mx-2.5 sm:mx-0">{children}</main>
   </>
 );
 
