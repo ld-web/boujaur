@@ -2,19 +2,24 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { serialize } from "next-mdx-remote/serialize";
 import { getPostData, getPostsSlugs, PostData } from "../lib/posts";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 
 interface PostProps {
   data: PostData;
+  source: MDXRemoteSerializeResult;
 }
 
-export default function Post({ data }: PostProps) {
+const components = { Image };
+
+export default function Post({ data, source }: PostProps) {
   const router = useRouter();
   const formattedDate = new Date(data.date);
 
   return (
     <>
-      <div className="mt-6 flex justify-center">
+      <div className="mt-10">
         <Link href="/" locale={router.locale}>
           <Image
             src="/images/arrow-left.svg"
@@ -25,7 +30,7 @@ export default function Post({ data }: PostProps) {
         </Link>
       </div>
       <section className="prose place-content-center prose-xl prose-zinc">
-        <h1 className="text-center my-20 mb-10">{data.title}</h1>
+        <h1 className="text-center my-10">{data.title}</h1>
         <div className="text-center">
           <span className="text-white text-base px-3 py-1 rounded-full bg-sky-800">
             {formattedDate.toLocaleDateString(router.locale)}
@@ -40,7 +45,9 @@ export default function Post({ data }: PostProps) {
             className="m-0 mt-6"
           />
         </div>
-        <article>{data.content}</article>
+        <div className="mb-20">
+          <MDXRemote {...source} components={components} />
+        </div>
       </section>
     </>
   );
@@ -49,9 +56,12 @@ export default function Post({ data }: PostProps) {
 export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
   const postData = await getPostData(params!.slug as string, locale!);
 
+  const mdxSource = await serialize(postData.content);
+
   return {
     props: {
       data: postData,
+      source: mdxSource,
     },
   };
 };

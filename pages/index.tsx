@@ -54,7 +54,11 @@ export default function Home({ postsData, locale }: HomeProps) {
               <p className="my-0 text-base">
                 {formattedDate.toLocaleDateString(locale)}
               </p>
-              <h3 className="mt-0">{postData.title}</h3>
+              <h3 className="mt-0">
+                <Link href={postData.slug} locale={locale}>
+                  {postData.title}
+                </Link>
+              </h3>
             </div>
           </article>
         );
