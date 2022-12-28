@@ -13,7 +13,11 @@ const PostImage = ({ label, ...props }: PostImageProps) => (
       height={props.height}
       className={label && "mb-0"}
     />
-    {label && <div className="text-sm text-center text-stone-500">{label}</div>}
+    {label && (
+      <div className="text-sm text-center text-stone-500 dark:text-stone-200">
+        {label}
+      </div>
+    )}
   </div>
 );
 

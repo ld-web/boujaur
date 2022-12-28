@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next";
 import PostListItem from "../components/PostListItem";
+import ToggleTheme from "../components/ToggleTheme";
 import { getPostsMetadata, PostMetadata } from "../lib/posts";
 
 interface HomeProps {
@@ -9,8 +10,11 @@ interface HomeProps {
 
 export default function Home({ postsData, locale }: HomeProps) {
   return (
-    <section className="prose place-content-center prose-xl prose-zinc">
-      <h1 className="text-center my-20">BOUJAUR</h1>
+    <section className="prose place-content-center prose-xl prose-zinc dark:prose-invert">
+      <div className="mt-6 text-center">
+        <ToggleTheme />
+      </div>
+      <h1 className="text-center my-20 mt-12">BOUJAUR</h1>
 
       <p>
         Moments choisis, issus de mon séjour à Taïwan entre Novembre 2022 et

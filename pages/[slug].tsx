@@ -8,6 +8,8 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import Zh from "../components/Zh";
 import PostImage from "../components/PostImage";
 import Head from "next/head";
+import { useTheme } from "next-themes";
+import ToggleTheme from "../components/ToggleTheme";
 
 interface PostProps {
   data: PostData;
@@ -18,6 +20,7 @@ const components = { PostImage, Zh };
 
 export default function Post({ data, source }: PostProps) {
   const router = useRouter();
+  const { theme } = useTheme();
   const formattedDate = new Date(data.date);
 
   return (
@@ -25,15 +28,17 @@ export default function Post({ data, source }: PostProps) {
       <Head>
         <title>{`BOUJAUR - ${data.title}`}</title>
       </Head>
-      <div className="mt-10 ml-4">
+      <div className="mt-10 ml-4 flex justify-between">
         <Link href="/" locale={router.locale} className="inline-block">
           <Image
             src="/images/arrow-left.svg"
             alt="Retour"
             width="35"
             height="35"
+            className="dark:invert"
           />
         </Link>
+        <ToggleTheme />
       </div>
       <div className="mb-6">
         <Image
@@ -45,7 +50,7 @@ export default function Post({ data, source }: PostProps) {
         />
       </div>
       <div className="flex justify-center">
-        <section className="prose place-content-center prose-xl prose-zinc">
+        <section className="prose place-content-center prose-xl prose-zinc dark:prose-invert">
           <div className="text-center">
             <span className="text-white text-base px-3 py-1 rounded-full bg-sky-800">
               {formattedDate.toLocaleDateString(router.locale)}
