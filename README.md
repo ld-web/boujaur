@@ -1,34 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BOUJAUR - 台灣冒險
 
-## Getting Started
+![Next JS](https://img.shields.io/badge/Next-black?style=flat-square&logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat-square&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat-square&logo=tailwind-css&logoColor=white)
+![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=flat-square&logo=markdown&logoColor=white)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=flat-square&logo=vercel&logoColor=white)
 
-First, run the development server:
+> 會說中文的人：修改是歡迎的 ⬇️⬇️
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## ㄏㄨㄢ ㄧㄥ ˊ ㄍㄨㄤ ㄌㄧㄣ ˊ
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+在這個小網站會有一些介紹在台灣學中文時期的文章。
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+這個專案用 NextJS 框架做的，因為代表一個在做網站的領域特別有趣的工具。
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+而且，以後會提供這些文章的中文版本，這個專案的結構目前應該已經準備好了收到。
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## NextJS 跟 MDX 處理
 
-## Learn More
+文章都用 MDX 的語言，因為會讓在一個內容裡面寫 JSX 的標籤很容易。
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+因次，這個專案用 next-mdx-remote 軟體包。
