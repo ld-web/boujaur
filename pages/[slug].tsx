@@ -62,6 +62,17 @@ export default function Post({ data, source }: PostProps) {
           </div>
         </section>
       </div>
+      <div className="my-4 mb-12 flex justify-center">
+        <Link href="/" locale={router.locale} className="inline-block">
+          <Image
+            src="/images/arrow-left.svg"
+            alt="Retour"
+            width="35"
+            height="35"
+            className="dark:invert"
+          />
+        </Link>
+      </div>
     </>
   );
 }
