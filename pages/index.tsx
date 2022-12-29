@@ -56,7 +56,7 @@ export const getStaticProps: GetStaticProps = async ({
 
   return {
     props: {
-      postsData: JSON.parse(JSON.stringify(data.reverse())),
+      postsData: JSON.parse(JSON.stringify(data)),
       locale: locale ?? defaultLocale!,
     },
   };
