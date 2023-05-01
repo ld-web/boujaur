@@ -1,4 +1,9 @@
 import pinyin from "pinyin";
+import localFont from "next/font/local";
+
+const zhFont = localFont({
+  src: "../public/fonts/edukai-4.0.ttf",
+});
 
 interface ZhProps {
   children: string;
@@ -15,7 +20,11 @@ const Zh = ({
 
   return (
     <>
-      <span className={`chinese ${title ? "" : "text-[23px]"}`}>{zhInput}</span>
+      <span
+        className={`${zhFont.className} chinese ${title ? "" : "text-[23px]"}`}
+      >
+        {zhInput}
+      </span>
       {displayPinyin && <span className="pl-1">({pinyinOutput})</span>}
     </>
   );
