@@ -42,6 +42,8 @@ export default function Post({ data, source }: PostProps) {
       </div>
       <div className="mb-6">
         <Image
+          sizes="80vw"
+          quality={50}
           src={`/images/${data.cover}`}
           alt={data.title}
           width="1080"

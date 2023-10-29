@@ -7,6 +7,8 @@ interface PostImageProps extends ImageProps {
 const PostImage = ({ label, ...props }: PostImageProps) => (
   <div className="flex flex-col justify-center items-center">
     <Image
+      quality={60}
+      sizes="(max-width: 768px) 85vw, 50vw"
       src={props.src}
       alt={props.alt}
       width={props.width}
