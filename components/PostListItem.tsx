@@ -18,6 +18,8 @@ const PostListItem = ({ data, locale }: PostListItemProps) => {
         <Link href={data.slug} locale={locale}>
           <Image
             src={`/images/${data.cover}`}
+            sizes="(max-width: 768px) 80vw, (max-width: 1200px) 50vw, 33vw"
+            quality={35}
             alt={data.title}
             width="520"
             height="300"
