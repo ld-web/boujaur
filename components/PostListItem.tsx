@@ -24,6 +24,8 @@ const PostListItem = ({ data, locale }: PostListItemProps) => {
             width="520"
             height="300"
             className="m-0"
+            placeholder="blur"
+            blurDataURL={data.coverPlaceholder}
           />
         </Link>
       </div>

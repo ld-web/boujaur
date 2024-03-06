@@ -8,7 +8,6 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import Zh from "../components/Zh";
 import PostImage from "../components/PostImage";
 import Head from "next/head";
-import { useTheme } from "next-themes";
 import ToggleTheme from "../components/ToggleTheme";
 
 interface PostProps {
@@ -20,7 +19,6 @@ const components = { PostImage, Zh };
 
 export default function Post({ data, source }: PostProps) {
   const router = useRouter();
-  const { theme } = useTheme();
   const formattedDate = new Date(data.date);
 
   return (
@@ -49,6 +47,8 @@ export default function Post({ data, source }: PostProps) {
           width="1080"
           height="800"
           className="m-0 mt-6"
+          placeholder="blur"
+          blurDataURL={data.coverPlaceholder}
         />
       </div>
       <div className="flex justify-center">
