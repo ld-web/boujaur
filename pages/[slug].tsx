@@ -26,7 +26,7 @@ export default function Post({ data, source }: PostProps) {
       <Head>
         <title>{`BOUJAUR - ${data.title}`}</title>
       </Head>
-      <div className="mt-10 ml-4 flex justify-between">
+      <div className="my-8 md:my-12 px-6 flex justify-between">
         <Link href="/" locale={router.locale} className="inline-block">
           <Image
             src="/images/arrow-left.svg"
@@ -46,20 +46,20 @@ export default function Post({ data, source }: PostProps) {
           alt={data.title}
           width="1080"
           height="800"
-          className="m-0 mt-6"
+          className="m-0"
           placeholder="blur"
           blurDataURL={data.coverPlaceholder}
         />
       </div>
       <div className="flex justify-center">
-        <section className="prose place-content-center prose-xl prose-zinc dark:prose-invert">
+        <section className="prose place-content-center prose-xl leading-8 prose-zinc dark:prose-invert">
           <div className="text-center">
             <span className="text-white text-base px-3 py-1 rounded-full bg-sky-800">
               {formattedDate.toLocaleDateString(router.locale)}
             </span>
           </div>
           <h1 className="text-center my-10">{data.title}</h1>
-          <div className="mb-20">
+          <div className="mb-16 px-4 md:px-0">
             <MDXRemote {...source} components={components} />
           </div>
         </section>

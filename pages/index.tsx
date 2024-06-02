@@ -10,7 +10,7 @@ interface HomeProps {
 
 export default function Home({ postsData, locale }: HomeProps) {
   return (
-    <section className="prose place-content-center prose-xl prose-zinc dark:prose-invert">
+    <section className="prose place-content-center prose-xl leading-8 prose-zinc dark:prose-invert px-4 md:px-0">
       <div className="mt-6 text-center">
         <ToggleTheme />
       </div>
