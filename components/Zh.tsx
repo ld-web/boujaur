@@ -2,7 +2,7 @@ import pinyin from "pinyin";
 import localFont from "next/font/local";
 
 const zhFont = localFont({
-  src: "../public/fonts/edukai-4.0.ttf",
+  src: "../public/fonts/edukai-4.0_subset.ttf",
 });
 
 interface ZhProps {
